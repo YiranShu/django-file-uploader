@@ -12,7 +12,7 @@ def write_file(request):
         myFile = request.FILES.get("myfile", None)
         if not myFile:
             return HttpResponse("no files for upload!")
-        destination = open(os.path.join("D:\\upload", myFile.name), 'wb+')
+        destination = open(os.path.join("/home/yiran/", myFile.name), 'wb+')
         for chunk in myFile.chunks():
             destination.write(chunk)
         destination.close()
