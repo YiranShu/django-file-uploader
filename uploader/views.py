@@ -1,6 +1,7 @@
 import os
 from django.shortcuts import render
 from django.http import HttpResponse
+from . import models
 
 
 def upload(request):
@@ -12,9 +13,13 @@ def write_file(request):
         myFile = request.FILES.get("myfile", None)
         if not myFile:
             return HttpResponse("no files for upload!")
-        destination = open(os.path.join("/home/yiran/", myFile.name), 'wb+')
-        for chunk in myFile.chunks():
-            destination.write(chunk)
-        destination.close()
+
+        scene = models.Scene(file=myFile)
+        scene.save()
+
+        # destination = open(os.path.join("/home/yiran/", myFile.name), 'wb+')
+        # for chunk in myFile.chunks():
+        #     destination.write(chunk)
+        # destination.close()
         return HttpResponse(myFile.name + " upload over!")
 
