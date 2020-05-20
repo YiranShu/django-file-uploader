@@ -9,7 +9,8 @@ from . import views
 app_name = 'uploader'
 urlpatterns = [
     path('', views.upload, name='upload'),
-    path('writeFile/', views.write_file, name='write'),
+    path('save_to_database/', views.save_to_database, name='save_to_database'),
+    path('<str:scene_id>/retrieve_from_database/', views.retrieve_from_database, name='retrieve_from_database'),
 ]
 
 if settings.DEBUG:

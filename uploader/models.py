@@ -12,5 +12,6 @@ connect('test')
 class Scene(mongoengine.Document):
     # created_on = models.DateTimeField(auto_now_add=True)
     file = mongoengine.FileField()
+    file_name = mongoengine.StringField()
 
 
