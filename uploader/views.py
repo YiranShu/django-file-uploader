@@ -1,6 +1,7 @@
 import os
 from django.shortcuts import render
 from django.http import HttpResponse
+import datetime
 from . import models
 
 
@@ -14,19 +15,26 @@ def save_to_database(request):
         if not myFile:
             return HttpResponse("no files for upload!")
 
-        scene = models.Scene(file=myFile, file_name=myFile.name)
-        scene.save()
-
+        scene = models.Scene(
+            file=myFile, 
+            file_name=myFile.name,
+            scene_name=request.POST.get("scene_name"),
+            description=request.POST.get("description"),
+            category=request.POST.get("category"),
+            tag=request.POST.get("tag"),
+            date_created=datetime.datetime.now()
+        ).save()
+        print(type(request.POST.get("scene_name")))
         return HttpResponse(myFile.name + " upload over!")
 
 
 def retrieve_from_database(request, scene_id):
     scenes = models.Scene.objects(file_name=scene_id)
-
+    print(len(scenes))
     for scene in scenes:
         file = scene.file
 
-        destination = open(os.path.join("/home/yiran/", scene.file_name), 'wb+')
+        destination = open(os.path.join("/Users/lewislin/Downloads/", scene.file_name), 'wb+')
         chunk = file.read(size=4000)
 
         while chunk:
@@ -34,6 +42,8 @@ def retrieve_from_database(request, scene_id):
             chunk = file.read(size=4000)
 
         destination.close()
-
-    return HttpResponse(scene_id + " has been saved!")
+        print(scene.scene_name)
+        output = scene.scene_name + " " + scene.description + " " + scene.category + " " +scene.tag + " " + str(scene.date_created)
+        
+    return HttpResponse(scene_id + " has been saved! " + output)
 

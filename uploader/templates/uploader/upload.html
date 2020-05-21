@@ -9,6 +9,18 @@
     {% csrf_token %}
     <input type="file" name="myfile" />
     <br/>
+    Scene Name:
+    <input type="text" name="scene_name" />
+    <br/>
+    Description:
+    <textarea name="description" rows=5 cols=60></textarea>
+    <br/>
+    Category:
+    <input type="text" name="category" />
+    <br/> 
+    Tag:
+    <input type="text" name="tag" />
+    <br/>
     <input type="submit" value="upload" />
 </form>
 </body>
