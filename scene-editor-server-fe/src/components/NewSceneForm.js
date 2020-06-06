@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import {Button, Form, FormGroup, Input, Label } from "reactstrap";
+import Button from 'react-bootstrap/Button';
 
 import axios from "axios";
 
@@ -7,23 +8,24 @@ import { API_URL } from "../constants";
 
 class NewSceneForm extends React.Component {
   state = {
-    file_name: "",
-    user: "",
+    // file_name: "",
+    // user: "",
     scene_name: "",
     description: "",
     category: "",
-    tag: ""
+    tag: "",
+    dataset: ""
   };
 
   componentDidMount() {
     if (this.props.scene) {
-      const { file_name, user, scene_name, description, category, tag } = this.props.scene;
-      this.setState({ file_name, user, scene_name, description, category, tag });
+      const { scene_name, description, category, tag, dataset } = this.props.scene;
+      this.setState({scene_name, description, category, tag, dataset });
     }
   }
 
-  onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+  onChange = e => {                                      //handle Input Change
+    this.setState({ [e.target.name]: e.target.value });  //target.name can be the "name" in Input tag
   };
 
   createScene = e => {
@@ -49,7 +51,7 @@ class NewSceneForm extends React.Component {
   render() {
     return (
       <Form onSubmit={this.props.scene ? this.editScene : this.createScene}>
-        <FormGroup>
+        {/* <FormGroup>
           <Label for="file_name">File Name:</Label>
           <Input
             type="text"
@@ -66,7 +68,7 @@ class NewSceneForm extends React.Component {
             onChange={this.onChange}
             value={this.defaultIfEmpty(this.state.user)}
           />
-        </FormGroup>
+        </FormGroup> */}
         <FormGroup>
           <Label for="scene_name">Scene Name:</Label>
           <Input
@@ -78,9 +80,12 @@ class NewSceneForm extends React.Component {
         </FormGroup>
         <FormGroup>
           <Label for="description">Description:</Label>
-          <Input
+          <br></br>
+          <textarea
             type="text"
             name="description"
+            rows={2}
+            cols={50}
             onChange={this.onChange}
             value={this.defaultIfEmpty(this.state.description)}
           />
@@ -103,7 +108,17 @@ class NewSceneForm extends React.Component {
             value={this.defaultIfEmpty(this.state.tag)}
           />
         </FormGroup>
-        <Button>Send</Button>
+        <FormGroup>
+          <Label for="dataset">Dataset:</Label>
+          <Input
+            type="text"
+            name="dataset"
+            onChange={this.onChange}
+            value={this.defaultIfEmpty(this.state.dataset)}
+          />
+        </FormGroup>
+        <Button variant='secondary'>Cancel</Button>{' '}
+        <Button variant='primary'>Create Scene</Button>{' '}
       </Form>
     );
   }

@@ -14,7 +14,7 @@ class Header extends Component {
         <h5>
           <i>presents</i>
         </h5>
-        <h1>App with React + Django</h1>
+        <h1>Scene Editor</h1>
       </div>
     );
   }

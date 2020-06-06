@@ -20,6 +20,7 @@ class Scene(mongoengine.Document):
     description = mongoengine.StringField()
     category = mongoengine.StringField()
     tag = mongoengine.StringField()
+    dataset = mongoengine.StringField()
 
 
 
