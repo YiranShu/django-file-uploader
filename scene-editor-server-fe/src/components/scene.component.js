@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import SceneDataService from "../services/scene.service";
+import "./component.css"
+import { Link } from "react-router-dom";
 
 export default class Scene extends Component {
   constructor(props) {
@@ -17,8 +19,8 @@ export default class Scene extends Component {
 
     this.state = {
       currentScene: {
-        file_name: "",
-        user: "",
+        file_name: "test",
+        user: "test",
         scene_name: "",
         description: "",
         category: "",
@@ -28,9 +30,11 @@ export default class Scene extends Component {
       message: ""
     };
   }
-
+  
   componentDidMount() {
+    console.log("hello world")
     this.getScene(this.props.match.params.file_name);  //???
+    console.log("hello")
   }
 
   onChangeUser(e) {
@@ -101,8 +105,9 @@ export default class Scene extends Component {
     }));
   }
 
-  getScene(id) {
-    SceneDataService.get(id)
+  getScene(file_name) {
+    console.log("!!!")
+    SceneDataService.get(file_name)
       .then(response => {
         this.setState({
             currentScene: response.data
@@ -139,7 +144,7 @@ export default class Scene extends Component {
 
   updateScene() {
     SceneDataService.update(
-      this.state.currentScene.id,
+      this.state.currentScene.file_name,
       this.state.currentScene
     )
       .then(response => {
@@ -154,7 +159,7 @@ export default class Scene extends Component {
   }
 
   deleteScene() {    
-    SceneDataService.delete(this.state.currentScene.id)
+    SceneDataService.delete(this.state.currentScene.file_name)
       .then(response => {
         console.log(response.data);
         this.props.history.push('/scenes')
@@ -173,7 +178,7 @@ export default class Scene extends Component {
           <div className="edit-form">
             <h4>Scene</h4>
             <form>
-                <div className="form-group">
+                {/* <div className="form-group">
                 <label htmlFor="user">User</label>
                 <input
                     type="text"
@@ -182,7 +187,7 @@ export default class Scene extends Component {
                     value={this.state.user}
                     onChange={this.onChangeUser}
                 />
-                </div>
+                </div> */}
 
                 <div className="form-group">
                 <label htmlFor="scene_name">Scene Name</label>
@@ -256,6 +261,16 @@ export default class Scene extends Component {
             >
               Update
             </button>
+            <br></br>
+            <br></br>  
+            <Link
+                // to={"/scenes/" + currentScene.file_name}
+                to={"/scenes/display/" + currentScene.file_name}
+                className="badge badge-warning"
+              >
+                Scene-editor
+            </Link>
+            
             <p>{this.state.message}</p>
           </div>
         ) : (

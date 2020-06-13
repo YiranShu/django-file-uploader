@@ -55,7 +55,7 @@ def upload(request):
 #     return HttpResponse(scene_id + " has been saved! " + output)
 
 
-@api_view(['GET', 'POST'])
+@api_view(['GET', 'POST', 'DELETE'])
 def scenes_list(request):
     if request.method == 'GET':
         data = models.Scene.objects.all()
@@ -72,6 +72,9 @@ def scenes_list(request):
             return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
 
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'DELETE':
+        count = models.Scene.objects.all().delete()
+        return JsonResponse({'message': '{} Scenes were deleted successfully!'.format(count[0])}, status=status.HTTP_204_NO_CONTENT)
 
 
 @api_view(['GET', 'PUT', 'DELETE'])

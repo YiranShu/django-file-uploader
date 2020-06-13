@@ -134,6 +134,7 @@ export default class ScenesList extends Component {
           >
             Remove All
           </button>
+          {/* <iframe title="Scene Editor" src="http://www.baidu.com" name="example"></iframe> */}
         </div>
         <div className="col-md-6">
           {currentScene ? (
@@ -178,11 +179,13 @@ export default class ScenesList extends Component {
               </div> */}
 
               <Link
+                // to={"/scenes/" + currentScene.file_name}
                 to={"/scenes/" + currentScene.file_name}
                 className="badge badge-warning"
               >
                 Edit
               </Link>
+              
             </div>
           ) : (
             <div>

@@ -72,7 +72,7 @@ export default class AddScene extends Component {
   saveScene() {
     var data = {
       file_name: 'test',
-      user: this.state.user,
+      user: 'test',
       scene_name: this.state.scene_name,
       description: this.state.description,
       category: this.state.category,
@@ -117,15 +117,23 @@ export default class AddScene extends Component {
     return (
       <div className="submit-form">
         {this.state.submitted ? (
-          <div>
+          <div className="edit-form">
             <h4>You submitted successfully!</h4>
-            <button className="btn btn-success" onClick={this.newScene}>
-              Create
+            <button className="badge badge-success" onClick={this.newScene}>
+              Create Another
+            </button>
+            <br></br>
+            <br></br>
+            <button
+              className="badge badge-danger mr-2"
+              onClick={this.newScene}
+            >
+              Edit Scene
             </button>
           </div>
         ) : (
           <div>
-            <div className="form-group">
+            {/* <div className="form-group">
               <label htmlFor="user">User</label>
               <input
                 type="text"
@@ -136,7 +144,7 @@ export default class AddScene extends Component {
                 onChange={this.onChangeUser}
                 name="user"
               />
-            </div>
+            </div> */}
 
             <div className="form-group">
               <label htmlFor="scene_name">Scene Name</label>

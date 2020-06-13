@@ -14,7 +14,7 @@ class SceneDataService {
   }
 
   update(file_name, data) {
-    return http.put(`/scenes/${file_name}`, data);
+    return http.put(`/scenes/${file_name}/`, data);
   }
 
   delete(file_name) {
