@@ -7,7 +7,7 @@ import "./App.css";
 import AddScene from "./components/add-scene.component";
 import Scene from "./components/scene.component";
 import ScenesList from "./components/scenes-list.component";
-import SceneEditor from "./components/SceneEditor.component";
+// import SceneEditor from "./components/SceneEditor.component";
 // import axios from 'axios';
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import Header from "./components/Header";
@@ -41,7 +41,7 @@ class App extends Component {
               <Route exact path={["/", "/scenes"]} component={ScenesList} />
               <Route exact path="/add" component={AddScene} />
               <Route path="/scenes/:file_name" component={Scene} />
-              <Route path="/scenes/display/:file_name" component={SceneEditor} />
+              {/* <Route path="/scenes/display/:file_name" component={SceneEditor} /> */}
             </Switch>
           </div>
         </div>

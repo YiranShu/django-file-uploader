@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SceneDataService from "../services/scene.service";
-import "./component.css"
+// import "./component.css"
 import { Link } from "react-router-dom";
 
 export default class Scene extends Component {
