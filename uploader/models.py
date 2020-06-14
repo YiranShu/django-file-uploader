@@ -12,14 +12,15 @@ connect('test')
 
 class Scene(mongoengine.Document):
     # created_on = models.DateTimeField(auto_now_add=True)
-    file = mongoengine.FileField()
+    # file = mongoengine.FileField()
     file_name = mongoengine.StringField()
-    # user = mongoengine.StringField()
-    date_created = mongoengine.DateTimeField(default=datetime.datetime.utcnow)
+    user = mongoengine.StringField()
+    # date_created = mongoengine.DateTimeField(default=datetime.datetime.utcnow)
     scene_name = mongoengine.StringField()
     description = mongoengine.StringField()
     category = mongoengine.StringField()
     tag = mongoengine.StringField()
+    dataset = mongoengine.StringField()
 
 
 
