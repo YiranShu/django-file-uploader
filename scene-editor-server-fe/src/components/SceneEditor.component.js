@@ -9,13 +9,11 @@ export default class SceneEditor extends Component{
         return(
         <div>
             <Iframe url="http://aspis.cmpt.sfu.ca/scene-toolkit/scene-viewer.html?extra"
-            
             width="1300"
             height="950"
             allow="fullscreen"
             id="myId"
             className="myClassname"
-            
             /> 
         </div>
         
