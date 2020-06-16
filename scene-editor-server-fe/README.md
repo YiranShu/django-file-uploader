@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# README: Scene Editor - Client
+
+Welcome to the Scene Editor Client repository!
 
 ## Available Scripts
 
