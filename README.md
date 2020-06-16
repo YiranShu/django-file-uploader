@@ -24,7 +24,7 @@ In order to access the Scene Toolkit within the scene editor web app, its server
 Setup and build for the interactive scene editor can be found within the `/client` file. It will eventually run on the <http://localhost:8081> port.
 
 ## Contributors
+* [Lewis Lin](https://github.com/LewisLinn)
 * [Yiran Shu](https://github.com/YiranShu)
-* Lewis Lin
 * [David Han](https://github.com/davidfhan)
 
