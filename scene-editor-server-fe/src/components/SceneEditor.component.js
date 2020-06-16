@@ -8,7 +8,7 @@ export default class SceneEditor extends Component{
     render(){
         return(
         <div>
-            <Iframe url="http://localhost:8010/scene-viewer.html"
+            <Iframe url="http://aspis.cmpt.sfu.ca/scene-toolkit/scene-viewer.html?extra"
             
             width="1300"
             height="950"
