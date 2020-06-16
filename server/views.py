@@ -12,7 +12,7 @@ from rest_framework import status
 
 @api_view(['GET'])
 def upload(request):
-    return render(request, 'uploader/upload.html', {})
+    return render(request, 'server/server.html', {})
 
 
 # @api_view(['POST'])

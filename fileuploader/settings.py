@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'uploader.apps.UploaderConfig',
+    'server.apps.ServerConfig',
     'corsheaders',              #configuration for CORS
     'rest_framework',           #Django REST framework
     'django.contrib.admin',

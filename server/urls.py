@@ -6,7 +6,7 @@ from django.views.static import serve
 
 from . import views
 
-app_name = 'uploader'
+app_name = 'server'
 urlpatterns = [
     path('', views.upload, name='upload'),
     path('scenes/', views.scenes_list, name='scenes_list'),
