@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import SceneDataService from "../services/scene.service";
 import "./component.css"
-import { Link } from "react-router-dom";
+
+import SceneEditor from "./SceneEditor.component";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect} from "react-router-dom";
 
 export default class Scene extends Component {
   constructor(props) {
@@ -106,7 +108,7 @@ export default class Scene extends Component {
   }
 
   getScene(file_name) {
-    console.log("!!!")
+    console.log("scene.component is mounted")
     SceneDataService.get(file_name)
       .then(response => {
         this.setState({
@@ -263,10 +265,13 @@ export default class Scene extends Component {
             </button>
             <br></br>
             <br></br>  
+            <Route exact path={"/scenes/display"} component={SceneEditor}/>
             <Link
                 // to={"/scenes/" + currentScene.file_name}
-                to={"/scenes/display/" + currentScene.file_name}
+                // to={"/scenes/display/" + currentScene.file_name}
+                to={"/scenes/display"}
                 className="badge badge-warning"
+                target="_blank"
               >
                 Scene-editor
             </Link>
