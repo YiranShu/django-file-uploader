@@ -1,4 +1,4 @@
-# scene-editor-server
+# Scene Editor Server
 
 Welcome to the Scene Editor Server Side!
 
@@ -25,7 +25,7 @@ In order to access the Scene Toolkit within the scene editor web app, its server
 #### Web Application Setup:
 Setup and build for the interactive scene editor can be found within the **scene-editor-server-fe** file.
 
-##Contributors
+## Contributors
 * [Yiran Shu](https://github.com/YiranShu)
 * Lewis Lin
 * [David Han](https://github.com/davidfhan)
