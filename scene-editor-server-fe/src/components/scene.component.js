@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import SceneDataService from "../services/scene.service";
-import "./component.css"
 
 import SceneEditor from "./SceneEditor.component";
 import { BrowserRouter as Router, Switch, Route, Link, Redirect} from "react-router-dom";
@@ -121,28 +120,6 @@ export default class Scene extends Component {
       });
   }
 
-//   updatePublished(status) {
-//     var data = {
-//       id: this.state.currentTutorial.id,
-//       title: this.state.currentTutorial.title,
-//       description: this.state.currentTutorial.description,
-//       published: status
-//     };
-
-//     TutorialDataService.update(this.state.currentTutorial.id, data)
-//       .then(response => {
-//         this.setState(prevState => ({
-//           currentTutorial: {
-//             ...prevState.currentTutorial,
-//             published: status
-//           }
-//         }));
-//         console.log(response.data);
-//       })
-//       .catch(e => {
-//         console.log(e);
-//       });
-//   }
 
   updateScene() {
     SceneDataService.update(

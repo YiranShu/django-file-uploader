@@ -171,12 +171,7 @@ export default class ScenesList extends Component {
                 {currentScene.dataset}    
               </div>
               
-              {/* <div>
-                <label>
-                  <strong>Status:</strong>
-                </label>{" "}
-                {currentTutorial.published ? "Published" : "Pending"}
-              </div> */}
+              
 
               <Link
                 // to={"/scenes/" + currentScene.file_name}
