@@ -14,7 +14,7 @@ Ensure that the latest versions of [Python](https://www.python.org/downloads/) a
 #### MongoDB:
 Ensure that MongoDB is correctly installed and running for [Mac](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/), [Windows](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/), or [Linux](https://docs.mongodb.com/manual/administration/install-on-linux/). Running `Mongo` in your terminal to access the MongoDB Shell or downloading MongoDB Compass will allow you to view your local database of scenes.
 
-#### Server Setup:
+#### Client Side Setup:
 To connect the web application with the MongoDB database, run `python3 manage.py runserver 8080` in the root directory. Ensure that this remains running in the background to correctly save scenes.
 
 #### Scene Toolkit Setup:
