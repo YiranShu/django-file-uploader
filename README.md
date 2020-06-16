@@ -1,12 +1,12 @@
-# README: Scene Editor Server
+# README: Scene Editor
 
 ## Description
 
-Welcome to the Scene Editor Server Side! This repository holds the React.js web application built with a Django framework and the backend uploader connected to a MongoDB database. The Scene Editor Server is designed for easy interaction and storage of scenes built from the integrated Scene Toolkit. A built-in save functionality allows for the callback and updating of various scenes that can be accessed from the home page. Development setup information can be found below.
+Welcome to the Scene Editor! This repository holds the React.js web application built with a Django framework and the backend uploader connected to a MongoDB database. The Scene Editor Server is designed for easy interaction and storage of scenes built from the integrated Scene Toolkit. A built-in save functionality allows for the callback and updating of various scenes that can be accessed from the home page. Development setup information can be found below.
 
-Currently, the most recent updates to the scene-editor-server can be found in this dev1.5 branch.
+Currently, the most recent updates to the `scene-editor` can be found in this dev1.5 branch.
 
-## Setup
+## Dev Setup
 
 #### Django:
 Ensure that the latest versions of [Python](https://www.python.org/downloads/) and [Django](https://www.djangoproject.com/download/) are installed on your local machine. You can verify completion by running `python3 --version` and `django-admin.py version`.
