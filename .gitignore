@@ -3,3 +3,13 @@
 
 #Node
 node_modules
+
+#Byte-compuled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+#Environments
+.env
+
+#Django
+*.sqlite3
