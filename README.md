@@ -23,7 +23,7 @@ To connect the web application with the MongoDB database, run `python3 manage.py
 In order to access the Scene Toolkit within the scene editor web app, its server must be setup and running on the <http://localhost:8010> port.
 
 #### Web Application Setup:
-Setup and build for the interactive scene editor can be found within the **scene-editor-server-fe** file. It can be accessed here: <http://localhost:8081>
+Setup and build for the interactive scene editor can be found within the **scene-editor-server-fe** file. It will eventually run here: <http://localhost:8081>
 
 ## Contributors
 * [Yiran Shu](https://github.com/YiranShu)
