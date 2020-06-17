@@ -1,6 +1,10 @@
+/**
+ * This page is rendered when the update button on the home page is clicked.
+ * It can be reached at "/file_name" and is used for editing the METADATA.
+ */
+
 import React, { Component } from "react";
 import SceneDataService from "../services/scene.service";
-import SceneEditor from "./SceneEditor.component";
 import { BrowserRouter as Router, Switch, Route, Link, Redirect} from "react-router-dom";
 
 export default class Scene extends Component {
@@ -241,11 +245,10 @@ export default class Scene extends Component {
             </button>
             <br></br>
             <br></br>  
-            <Route exact path={"/scenes/display"} component={SceneEditor}/>
             <Link
                 // to={"/scenes/" + currentScene.file_name}
                 // to={"/scenes/display/" + currentScene.file_name}
-                to={"/scenes/display"}
+                to={"/editor"}
                 className="badge badge-warning"
                 target="_blank"
               >

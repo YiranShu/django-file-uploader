@@ -1,3 +1,8 @@
+/**
+ * Serves as the "home page" and can be accessed by the "/" url.
+ * Holds the list of created scenes.
+ */
+
 import React, { Component } from "react";
 import SceneDataService from "../services/scene.service";
 import { Link } from "react-router-dom";
@@ -170,15 +175,12 @@ export default class ScenesList extends Component {
                 </label>{" "}            
                 {currentScene.dataset}    
               </div>
-              
-              
 
               <Link
-                // to={"/scenes/" + currentScene.file_name}
-                to={"/scenes/" + currentScene.file_name}
+                to={"/" + currentScene.file_name} //change all file_name urls to scene_name
                 className="badge badge-warning"
               >
-                Edit
+                Update
               </Link>
               
             </div>

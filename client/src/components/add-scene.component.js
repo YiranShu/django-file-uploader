@@ -1,3 +1,9 @@
+/**
+ * This page is rendered when the "add" button on the navbar is clicked.
+ * It allows a user to input information and add a new scene to the database.
+ * It can be reached at the "/add" link.
+ */
+
 import React, { Component } from "react";
 import SceneDataService from "../services/scene.service";
 
