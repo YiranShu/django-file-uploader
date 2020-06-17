@@ -11,6 +11,8 @@ Currently, the most recent updates to the `scene-editor` can be found in this de
 #### Django:
 Ensure that the latest versions of [Python](https://www.python.org/downloads/) and [Django](https://www.djangoproject.com/download/) are installed on your local machine. You can verify completion by running `python3 --version` and `django-admin.py version`.
 
+To ensure that the models are set up, in the root directory you must run `python3 manage.py makemigrations` and then `python3 manage.py migrate`
+
 #### MongoDB:
 Ensure that MongoDB is correctly installed and running for [Mac](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/), [Windows](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/), or [Linux](https://docs.mongodb.com/manual/administration/install-on-linux/). Running `Mongo` in your terminal to access the MongoDB Shell or downloading MongoDB Compass will allow you to view your local database of scenes.
 
