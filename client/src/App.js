@@ -37,7 +37,7 @@ class App extends Component {
               <Route exact path={"/"} component={ScenesList} />
               <Route exact path="/add" component={AddScene} />
               <Route exact path={"/editor"} component={SceneEditor} />  {/*order is important!*/}
-              <Route path="/:file_name" component={Scene} />
+              <Route path="/:_id" component={Scene} />
             </Switch>
           </div>
         </div>

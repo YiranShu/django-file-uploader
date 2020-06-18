@@ -1,6 +1,6 @@
 /**
  * This page is rendered when the update button on the home page is clicked.
- * It can be reached at "/file_name" and is used for editing the METADATA.
+ * It can be reached at "/_id" and is used for editing the METADATA.
  */
 
 import React, { Component } from "react";
@@ -36,9 +36,7 @@ export default class Scene extends Component {
   }
   
   componentDidMount() {
-    console.log("2" + this.props.match.params.file_name)
-    this.getScene(this.props.match.params.file_name);  //???
-    console.log("hello")
+    this.getScene(this.props.match.params._id);  //???
   }
 
   onChangeUser(e) {
@@ -126,7 +124,7 @@ export default class Scene extends Component {
 
   updateScene() {
     SceneDataService.update(
-      this.state.currentScene.file_name,
+      this.state.currentScene._id,
       this.state.currentScene
     )
       .then(response => {
@@ -141,10 +139,11 @@ export default class Scene extends Component {
   }
 
   deleteScene() {    
-    SceneDataService.delete(this.state.currentScene.file_name)
+    SceneDataService.delete(this.state.currentScene._id)
       .then(response => {
+        console.log('hi')
         console.log(response.data);
-        this.props.history.push('/scenes')
+        this.props.history.push('/')
       })
       .catch(e => {
         console.log(e);

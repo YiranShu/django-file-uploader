@@ -5,20 +5,20 @@ class SceneDataService {
     return http.get("/scenes");
   }
 
-  get(file_name) {
-    return http.get(`/scenes/${file_name}`);
+  get(_id) {
+    return http.get(`/scenes/${_id}`);
   }
 
   create(data) {
     return http.post("/scenes/", data);
   }
 
-  update(file_name, data) {
-    return http.put(`/scenes/${file_name}/`, data);
+  update(_id, data) {
+    return http.put(`/scenes/${_id}/`, data);
   }
 
-  delete(file_name) {
-    return http.delete(`/scenes/${file_name}`);
+  delete(_id) {
+    return http.delete(`/scenes/${_id}`);
   }
 
   deleteAll() {

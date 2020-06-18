@@ -11,7 +11,7 @@ urlpatterns = [
     path('', views.upload, name='upload'),
     path('scenes/', views.scenes_list, name='scenes_list'),
     # path('scenes/<str:scene_id>/', views.scene_detail, name='scene_detail'),
-    path('scenes/<str:file_name>/', views.scene_detail, name='scene_detail'),
+    path('scenes/<str:_id>/', views.scene_detail, name='scene_detail'),
 ]
 
 if settings.DEBUG:

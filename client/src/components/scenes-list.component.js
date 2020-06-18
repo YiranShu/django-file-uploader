@@ -149,7 +149,7 @@ export default class ScenesList extends Component {
                 <label>
                   <strong>Name:</strong>  
                 </label>{" "}            
-                {currentScene._id}    
+                {currentScene.scene_name}    
               </div>
               <div>
                 <label>
@@ -177,8 +177,7 @@ export default class ScenesList extends Component {
               </div>
 
               <Link
-                to={"/" + currentScene.file_name} //change all file_name urls to scene_name
-                onClick={() => console.log("1" + currentScene.file_name)}
+                to={"/" + currentScene._id} //change all file_name urls to _id
                 className="badge badge-warning"
               >
                 Edit

@@ -78,9 +78,9 @@ def scenes_list(request):
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def scene_detail(request, file_name):
+def scene_detail(request, _id):
     try:
-        scene = models.Scene.objects.get(file_name=file_name)
+        scene = models.Scene.objects.get(_id=_id)
     except models.Scene.DoesNotExist:
         return JsonResponse({'message': 'The scene does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
@@ -97,6 +97,8 @@ def scene_detail(request, file_name):
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':           #need a trailing slash / in url
+        print('***********')
+        print('***********')
         scene.delete()
         return JsonResponse({'message': 'Scene was deleted successfully!'},status=status.HTTP_204_NO_CONTENT)
 
