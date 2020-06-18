@@ -25,7 +25,6 @@ export default class Scene extends Component {
       currentScene: {
         file_name: "test",
         user: "test",
-        key: 1,
         scene_name: "",
         description: "",
         category: "",

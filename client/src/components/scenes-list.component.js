@@ -149,7 +149,7 @@ export default class ScenesList extends Component {
                 <label>
                   <strong>Name:</strong>  
                 </label>{" "}            
-                {currentScene.scene_name}    
+                {currentScene._id}    
               </div>
               <div>
                 <label>
