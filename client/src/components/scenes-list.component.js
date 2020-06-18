@@ -178,9 +178,10 @@ export default class ScenesList extends Component {
 
               <Link
                 to={"/" + currentScene.file_name} //change all file_name urls to scene_name
+                onClick={() => console.log("1" + currentScene.file_name)}
                 className="badge badge-warning"
               >
-                Update
+                Edit
               </Link>
               
             </div>

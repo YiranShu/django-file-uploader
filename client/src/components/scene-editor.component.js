@@ -8,9 +8,7 @@ import Iframe from 'react-iframe'
 import React, { Component } from "react";
 
 export default class SceneEditor extends Component{
-    constructor(props) {
-        super(props);
-    }
+
     render(){
         return(
         <div>

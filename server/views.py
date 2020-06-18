@@ -74,7 +74,7 @@ def scenes_list(request):
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'DELETE':
         count = models.Scene.objects.all().delete()
-        return JsonResponse({'message': '{} Scenes were deleted successfully!'.format(count[0])}, status=status.HTTP_204_NO_CONTENT)
+        return JsonResponse({'message': '{} Scenes were deleted successfully!'.format(count)}, status=status.HTTP_204_NO_CONTENT)
 
 
 @api_view(['GET', 'PUT', 'DELETE'])

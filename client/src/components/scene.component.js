@@ -5,7 +5,7 @@
 
 import React, { Component } from "react";
 import SceneDataService from "../services/scene.service";
-import { BrowserRouter as Router, Switch, Route, Link, Redirect} from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 
 export default class Scene extends Component {
   constructor(props) {
@@ -25,6 +25,7 @@ export default class Scene extends Component {
       currentScene: {
         file_name: "test",
         user: "test",
+        key: 1,
         scene_name: "",
         description: "",
         category: "",
@@ -36,7 +37,7 @@ export default class Scene extends Component {
   }
   
   componentDidMount() {
-    console.log("hello world")
+    console.log("2" + this.props.match.params.file_name)
     this.getScene(this.props.match.params.file_name);  //???
     console.log("hello")
   }

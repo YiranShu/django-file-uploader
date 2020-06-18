@@ -23,6 +23,7 @@ export default class AddScene extends Component {
     this.state = {
       file_name: "",
       user: "",
+      key: 0,
       scene_name: "",
       description: "",
       category: "",
@@ -37,6 +38,10 @@ export default class AddScene extends Component {
 //       title: e.target.value
 //     });
 //   }
+
+  randomKey() {
+    return Math.floor(Math.random() * 1000000)
+  }
 
   onChangeUser(e) {
     this.setState({
@@ -74,11 +79,11 @@ export default class AddScene extends Component {
     });
   }
 
-
   saveScene() {
     var data = {
       file_name: 'test',
       user: 'test',
+      key: this.randomKey(),
       scene_name: this.state.scene_name,
       description: this.state.description,
       category: this.state.category,
@@ -91,6 +96,7 @@ export default class AddScene extends Component {
         this.setState({
           file_name: response.data.file_name,
           user: response.data.user,
+          key: response.data.key,
           scene_name: response.data.scene_name,
           description: response.data.description,
           category: response.data.category,
@@ -110,6 +116,7 @@ export default class AddScene extends Component {
     this.setState({
         file_name: "",
         user: "",
+        key: 0,
         scene_name: "",
         description: "",
         category: "",

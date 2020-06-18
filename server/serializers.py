@@ -7,4 +7,4 @@ class SceneSerializer(DocumentSerializer):
 
     class Meta:
         model = Scene
-        fields = ['file_name', 'user', 'scene_name', 'description', 'category', 'tag', 'dataset']
+        fields = ['file_name', 'user', 'key', 'scene_name', 'description', 'category', 'tag', 'dataset']

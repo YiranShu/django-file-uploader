@@ -7,7 +7,7 @@ import datetime
 # gridfs_storage = GridFSStorage()
 
 from mongoengine import connect
-connect('test')
+connect('test1')
 
 
 class Scene(mongoengine.Document):
@@ -15,6 +15,7 @@ class Scene(mongoengine.Document):
     # file = mongoengine.FileField()
     file_name = mongoengine.StringField()
     user = mongoengine.StringField()
+    key = mongoengine.IntField()
     # date_created = mongoengine.DateTimeField(default=datetime.datetime.utcnow)
     scene_name = mongoengine.StringField()
     description = mongoengine.StringField()
