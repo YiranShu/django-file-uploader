@@ -247,7 +247,7 @@ export default class Scene extends Component {
             <Link
                 // to={"/scenes/" + currentScene.file_name}
                 // to={"/scenes/display/" + currentScene.file_name}
-                to={"/editor"}
+                to="/editor"
                 className="badge badge-warning"
                 target="_blank"
               >

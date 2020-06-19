@@ -97,8 +97,6 @@ def scene_detail(request, _id):
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':           #need a trailing slash / in url
-        print('***********')
-        print('***********')
         scene.delete()
         return JsonResponse({'message': 'Scene was deleted successfully!'},status=status.HTTP_204_NO_CONTENT)
 
