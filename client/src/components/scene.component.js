@@ -5,7 +5,7 @@
 
 import React, { Component } from "react";
 import SceneDataService from "../services/scene.service";
-import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default class Scene extends Component {
   constructor(props) {
@@ -229,7 +229,7 @@ export default class Scene extends Component {
             
 
             <button
-              className="badge badge-danger mr-2"
+              className="btn btn-danger mr-2"
               onClick={this.deleteScene}
             >
               Delete
@@ -237,19 +237,17 @@ export default class Scene extends Component {
 
             <button
               type="submit"
-              className="badge badge-success"
+              className="btn btn-success"
               onClick={this.updateScene}
             >
               Update
             </button>
-            <br></br>
-            <br></br>  
+
             <Link
-                // to={"/scenes/" + currentScene.file_name}
-                // to={"/scenes/display/" + currentScene.file_name}
                 to="/editor"
-                className="badge badge-warning"
+                className="btn btn-info"
                 target="_blank"
+                style={{marginLeft: 10}}
               >
                 Scene-editor
             </Link>

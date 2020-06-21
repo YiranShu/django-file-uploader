@@ -15,7 +15,7 @@ class Scene(mongoengine.Document):
     # file = mongoengine.FileField()
     file_name = mongoengine.StringField()
     user = mongoengine.StringField()
-    _id = mongoengine.ObjectIdField(primary_key=True)
+    _id = mongoengine.ObjectIdField()
     # date_created = mongoengine.DateTimeField(default=datetime.datetime.utcnow)
     scene_name = mongoengine.StringField()
     description = mongoengine.StringField()

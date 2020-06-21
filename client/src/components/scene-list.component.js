@@ -134,11 +134,12 @@ export default class ScenesList extends Component {
           </ul>
 
           <button
-            className="m-3 btn btn-sm btn-danger"
+            className="m-3 btn btn-md btn-danger"
             onClick={this.removeAllScenes}
           >
             Remove All
           </button>
+          
           {/* <iframe title="Scene Editor" src="http://www.baidu.com" name="example"></iframe> */}
         </div>
         <div className="col-md-6">
@@ -177,10 +178,19 @@ export default class ScenesList extends Component {
               </div>
 
               <Link
-                to={"/" + currentScene._id} //change all file_name urls to _id
-                className="badge badge-warning"
+                to={"/" + currentScene._id}
+                className="btn btn-sm btn-warning"
+                style={{marginRight: 10}}
               >
                 Edit
+              </Link>
+              <Link
+                // need to eventually make it specialize in a particular scene
+                to="/editor"
+                className="btn btn-sm btn-info"
+                target="_blank"
+              >
+                Scene Editor
               </Link>
               
             </div>

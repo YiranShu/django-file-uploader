@@ -5,7 +5,7 @@ import "./App.css";
 
 import AddScene from "./components/add-scene.component";
 import Scene from "./components/scene.component";
-import ScenesList from "./components/scenes-list.component";
+import ScenesList from "./components/scene-list.component";
 import SceneEditor from "./components/scene-editor.component";
 // import axios from 'axios';
 
