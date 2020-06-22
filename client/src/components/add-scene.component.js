@@ -81,19 +81,20 @@ export default class AddScene extends Component {
     return (
       <div className="submit-form">
         {this.state.submitted ? (
-          <div className="jumbotron justify-content-center">
-            <h4>You submitted successfully!</h4>
-            <button className="btn btn-success" onClick={this.newScene}>
-              Create Another
-            </button>
+          <div className="jumbotron ">
+            <h4 className="d-flex justify-content-center">You submitted successfully!</h4>
             <br></br>
-            <br></br>
-            <button
-              className="btn btn-danger mr-2"
-              onClick={this.newScene}
-            >
-              Edit Scene
-            </button>
+            <div className="d-flex justify-content-center">
+              <button className="btn btn-success mr-3" onClick={this.newScene}>
+                Create Another
+              </button>
+              <Link
+                  to="/"
+                  className="btn btn-danger"
+                  >
+                  Scene List
+              </Link>
+            </div>
           </div>
         ) : (
           <div>

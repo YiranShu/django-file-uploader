@@ -10,8 +10,8 @@ app_name = 'server'
 urlpatterns = [
     path('', views.upload, name='upload'),
     path('scenes/', views.scenes_list, name='scenes_list'),
-    # path('scenes/<str:scene_id>/', views.scene_detail, name='scene_detail'),
     path('scenes/<str:_id>/', views.scene_detail, name='scene_detail'),
+    path('scenes/search/<str:scene_name>/', views.scene_filter, name='scene_filter')
 ]
 
 if settings.DEBUG:

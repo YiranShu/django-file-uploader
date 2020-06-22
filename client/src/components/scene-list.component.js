@@ -35,6 +35,9 @@ export default class ScenesList extends Component {
     this.setState({
         searchName: searchName
     });
+    if(searchName === "") {
+      this.refreshList();
+    }
   }
 
   retrieveScenes() {
@@ -80,7 +83,7 @@ export default class ScenesList extends Component {
     SceneDataService.findByName(this.state.searchName)
       .then(response => {
         this.setState({
-          scenes: response.data
+          scenes: [response.data]
         });
         console.log(response.data);
       })
@@ -134,7 +137,7 @@ export default class ScenesList extends Component {
           </ul>
 
           <button
-            className="mt-3 btn btn-md btn-danger"
+            className="mt-3 btn btn-md btn-danger mb-3"
             onClick={this.removeAllScenes}
             id="rm-button"
           >

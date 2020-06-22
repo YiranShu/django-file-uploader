@@ -151,8 +151,9 @@ export default class Scene extends Component {
                     type="text"
                     className="form-control"
                     id="scene_name"
-                    value={this.state.scene_name}
+                    value={currentScene.scene_name}
                     onChange={this.onChangeSceneName}
+                    onFocus={this.value = this.value}
                 />
                 </div>
 
@@ -162,7 +163,7 @@ export default class Scene extends Component {
                     type="text"
                     className="form-control"
                     id="category"
-                    value={this.state.category}
+                    value={currentScene.category}
                     onChange={this.onChangeCategory}
                 />
                 </div>
@@ -173,7 +174,7 @@ export default class Scene extends Component {
                     type="text"
                     className="form-control"
                     id="tag"
-                    value={this.state.tag}
+                    value={currentScene.tag}
                     onChange={this.onChangeTag}
                 />
                 </div>
@@ -184,7 +185,7 @@ export default class Scene extends Component {
                     type="text"
                     className="form-control"
                     id="dataset"
-                    value={this.state.dataset}
+                    value={currentScene.dataset}
                     onChange={this.onChangeDataset}
                 />
                 </div>
@@ -195,35 +196,36 @@ export default class Scene extends Component {
                     className="form-control" 
                     id="description" 
                     rows="3" 
-                    value={this.state.description}
+                    value={currentScene.description}
                     onChange={this.onChangeDescription}
                     name="description"
                     />
                 </div>
             </form>
-            <button
-              className="btn btn-danger mr-2"
-              onClick={this.deleteScene}
-            >
-              Delete
-            </button>
-
-            <button
-              type="submit"
-              className="btn btn-success"
-              onClick={this.updateScene}
-            >
-              Update
-            </button>
-
-            <Link
-                to="/toolkit"
-                className="btn btn-info"
-                target="_blank"
-                style={{marginLeft: 10}}
+            <div className="d-flex justify-content-start">
+              <button
+                className="btn btn-danger mr-3"
+                onClick={this.deleteScene}
               >
-                Scene Toolkit
-            </Link>
+                Delete
+              </button>
+
+              <button
+                type="submit"
+                className="btn btn-success mr-3"
+                onClick={this.updateScene}
+              >
+                Update
+              </button>
+
+              <Link
+                  to="/toolkit"
+                  className="btn btn-info"
+                  target="_blank"
+                >
+                  Scene Toolkit
+              </Link>
+            </div>
             <p className="updated-para">{this.state.message}</p>
           </div>
         ) : (

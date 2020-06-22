@@ -6,7 +6,7 @@ class SceneDataService {
   }
 
   get(_id) {
-    return http.get(`/scenes/${_id}`);
+    return http.get(`/scenes/${_id}/`);
   }
 
   create(data) {
@@ -18,15 +18,16 @@ class SceneDataService {
   }
 
   delete(_id) {
-    return http.delete(`/scenes/${_id}`);
+    return http.delete(`/scenes/${_id}/`);
   }
 
   deleteAll() {
     return http.delete(`/scenes`);
   }
 
-  findByName(name) {
-    return http.get(`/scenes?name=${name}`);
+  findByName(scene_name) {
+    console.log('reached scene service')
+    return http.get(`/scenes/search/${scene_name}/`);
   }
 }
 

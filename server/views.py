@@ -100,3 +100,13 @@ def scene_detail(request, _id):
         scene.delete()
         return JsonResponse({'message': 'Scene was deleted successfully!'},status=status.HTTP_204_NO_CONTENT)
 
+@api_view(['GET'])
+def scene_filter(request, scene_name):
+    try:
+        scene = models.Scene.objects.get(scene_name=scene_name)
+    except models.Scene.DoesNotExist:
+        return JsonResponse({'message': 'The scene does not exist'}, status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = SceneSerializer(scene)
+        return JsonResponse(serializer.data)
