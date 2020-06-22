@@ -5,11 +5,28 @@
 }
 
 .submit-form {
-  max-width: 300px;
+  max-width: 400px;
   margin: auto;
 }
 
 .edit-form {
-  max-width: 300px;
+  max-width: 400px;
   margin: auto;
+}
+
+.list-item {
+  display: inline;
+}
+
+.updated-para {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.details-divs {
+  margin-bottom: 5px;
+}
+
+.list-button {
+  margin-right: 10px;
 }

@@ -6,17 +6,11 @@
 
 import React, { Component } from "react";
 import SceneDataService from "../services/scene.service";
+import { Link } from "react-router-dom";
 
 export default class AddScene extends Component {
   constructor(props) {
     super(props);
-    // this.onChangefile_name = this.onChangefile_name.bind(this);
-    this.onChangeUser = this.onChangeUser.bind(this);
-    this.onChangeSceneName = this.onChangeSceneName.bind(this);
-    this.onChangeDescription = this.onChangeDescription.bind(this);
-    this.onChangeCategory = this.onChangeCategory.bind(this);
-    this.onChangeTag = this.onChangeTag.bind(this);
-    this.onChangeDataset = this.onChangeDataset.bind(this);
     this.saveScene = this.saveScene.bind(this);
     this.newScene = this.newScene.bind(this);
 
@@ -37,42 +31,6 @@ export default class AddScene extends Component {
 //       title: e.target.value
 //     });
 //   }
-
-  onChangeUser(e) {
-    this.setState({
-        user: e.target.value
-    });
-  }
-
-  onChangeSceneName(e) {
-    this.setState({
-        scene_name: e.target.value
-    });
-  }
-
-  onChangeDescription(e) {
-    this.setState({
-      description: e.target.value
-    });
-  }
-
-  onChangeCategory(e) {
-    this.setState({
-        category: e.target.value
-    });
-  }
-
-  onChangeTag(e) {
-    this.setState({
-        tag: e.target.value
-    });
-  }
-
-  onChangeDataset(e) {
-    this.setState({
-        dataset: e.target.value
-    });
-  }
 
   saveScene() {
     var data = {
@@ -116,21 +74,22 @@ export default class AddScene extends Component {
         dataset: "",
         submitted: false
     });
+    window.location.reload(false)
   }
 
   render() {
     return (
       <div className="submit-form">
         {this.state.submitted ? (
-          <div className="edit-form">
+          <div className="jumbotron justify-content-center">
             <h4>You submitted successfully!</h4>
-            <button className="badge badge-success" onClick={this.newScene}>
+            <button className="btn btn-success" onClick={this.newScene}>
               Create Another
             </button>
             <br></br>
             <br></br>
             <button
-              className="badge badge-danger mr-2"
+              className="btn btn-danger mr-2"
               onClick={this.newScene}
             >
               Edit Scene
@@ -138,83 +97,74 @@ export default class AddScene extends Component {
           </div>
         ) : (
           <div>
-            {/* <div className="form-group">
-              <label htmlFor="user">User</label>
-              <input
-                type="text"
-                className="form-control"
-                id="user"
-                required
-                value={this.state.user}
-                onChange={this.onChangeUser}
-                name="user"
-              />
-            </div> */}
 
-            <div className="form-group">
-              <label htmlFor="scene_name">Scene Name</label>
-              <input
-                type="text"
-                className="form-control"
-                id="scene_name"
-                required
-                value={this.state.scene_name}
-                onChange={this.onChangeSceneName}
-                name="scene_name"
-              />
-            </div>
+            <h4>New Scene</h4>
+            <form>
 
-            <div className="form-group">
-              <label htmlFor="description">Description</label>
-              <input
-                type="text"
-                className="form-control"
-                id="description"
-                required
-                value={this.state.description}
-                onChange={this.onChangeDescription}
-                name="description"
-              />
-            </div>
+              <div className="form-group">
+                <label htmlFor="scene_name">Name</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="scene_name"
+                  required
+                  value={this.state.scene_name}
+                  onChange={e => this.setState({scene_name: e.target.value})}
+                  name="scene_name"
+                />
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="category">Category</label>
-              <input
-                type="text"
-                className="form-control"
-                id="category"
-                required
-                value={this.state.category}
-                onChange={this.onChangeCategory}
-                name="category"
-              />
-            </div>
+              <div className="form-group">
+                <label htmlFor="category">Category</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="category"
+                  required
+                  value={this.state.category}
+                  onChange={e => this.setState({category: e.target.value})}
+                  name="category"
+                />
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="tag">Tag</label>
-              <input
-                type="text"
-                className="form-control"
-                id="tag"
-                required
-                value={this.state.tag}
-                onChange={this.onChangeTag}
-                name="tag"
-              />
-            </div>
+              <div className="form-group">
+                <label htmlFor="tag">Tag</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="tag"
+                  required
+                  value={this.state.tag}
+                  onChange={e => this.setState({tag: e.target.value})}
+                  name="tag"
+                />
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="dataset">Dataset</label>
-              <input
-                type="text"
-                className="form-control"
-                id="dataset"
-                required
-                value={this.state.dataset}
-                onChange={this.onChangeDataset}
-                name="dataset"
-              />
-            </div>
+              <div className="form-group">
+                <label htmlFor="dataset">Dataset</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="dataset"
+                  required
+                  value={this.state.dataset}
+                  onChange={e => this.setState({dataset: e.target.value})}
+                  name="dataset"
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="description">Description</label>
+                <textarea 
+                  className="form-control" 
+                  id="description" 
+                  rows="3" 
+                  value={this.state.description}
+                  onChange={e => this.setState({description: e.target.value})}
+                  name="description"
+                  />
+              </div>
+            </form>
 
             <button onClick={this.saveScene} className="btn btn-success">
               Submit

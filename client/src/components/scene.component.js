@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 export default class Scene extends Component {
   constructor(props) {
     super(props);
-    this.onChangeUser = this.onChangeUser.bind(this);
     this.onChangeSceneName = this.onChangeSceneName.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeCategory = this.onChangeCategory.bind(this);
@@ -36,20 +35,7 @@ export default class Scene extends Component {
   }
   
   componentDidMount() {
-    this.getScene(this.props.match.params._id);  //???
-  }
-
-  onChangeUser(e) {
-    const user = e.target.value;
-
-    this.setState(function(prevState) {
-      return {
-        currentScene: {
-          ...prevState.currentScene,
-          user: user
-        }
-      };
-    });
+    this.getScene(this.props.match.params._id);
   }
 
   onChangeSceneName(e) {
@@ -130,7 +116,7 @@ export default class Scene extends Component {
       .then(response => {
         console.log(response.data);
         this.setState({
-          message: "The scene was updated successfully!"
+          message: "Your scene was successfully updated!"
         });
       })
       .catch(e => {
@@ -157,38 +143,16 @@ export default class Scene extends Component {
       <div>
         {currentScene ? (
           <div className="edit-form">
-            <h4>Scene</h4>
+            <h4>Scene Details</h4>
             <form>
-                {/* <div className="form-group">
-                <label htmlFor="user">User</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="user"
-                    value={this.state.user}
-                    onChange={this.onChangeUser}
-                />
-                </div> */}
-
                 <div className="form-group">
-                <label htmlFor="scene_name">Scene Name</label>
+                <label htmlFor="scene_name">Name</label>
                 <input
                     type="text"
                     className="form-control"
                     id="scene_name"
                     value={this.state.scene_name}
                     onChange={this.onChangeSceneName}
-                />
-                </div>
-
-                <div className="form-group">
-                <label htmlFor="description">Description</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="description"
-                    value={this.state.description}
-                    onChange={this.onChangeDescription}
                 />
                 </div>
 
@@ -224,10 +188,19 @@ export default class Scene extends Component {
                     onChange={this.onChangeDataset}
                 />
                 </div>
+
+                <div className="form-group">
+                  <label htmlFor="description">Description</label>
+                  <textarea 
+                    className="form-control" 
+                    id="description" 
+                    rows="3" 
+                    value={this.state.description}
+                    onChange={this.onChangeDescription}
+                    name="description"
+                    />
+                </div>
             </form>
-
-            
-
             <button
               className="btn btn-danger mr-2"
               onClick={this.deleteScene}
@@ -244,15 +217,14 @@ export default class Scene extends Component {
             </button>
 
             <Link
-                to="/editor"
+                to="/toolkit"
                 className="btn btn-info"
                 target="_blank"
                 style={{marginLeft: 10}}
               >
-                Scene-editor
+                Scene Toolkit
             </Link>
-            
-            <p>{this.state.message}</p>
+            <p className="updated-para">{this.state.message}</p>
           </div>
         ) : (
           <div>

@@ -115,7 +115,7 @@ export default class ScenesList extends Component {
           </div>
         </div>
         <div className="col-md-6">
-          <h4>Scenes List</h4>
+          <h4>Scene List</h4>
 
           <ul className="list-group">
             {scenes &&
@@ -134,70 +134,70 @@ export default class ScenesList extends Component {
           </ul>
 
           <button
-            className="m-3 btn btn-md btn-danger"
+            className="mt-3 btn btn-md btn-danger"
             onClick={this.removeAllScenes}
+            id="rm-button"
           >
-            Remove All
+          Remove All
           </button>
           
           {/* <iframe title="Scene Editor" src="http://www.baidu.com" name="example"></iframe> */}
         </div>
         <div className="col-md-6">
           {currentScene ? (
-            <div>
-              <h4>Scene</h4>
-              <div>
-                <label>
+            <div style={{width: 300}}>
+              <h4>Scene Details</h4>
+              <div className="details-divs">
+                <label className="list-item">
                   <strong>Name:</strong>  
                 </label>{" "}            
                 {currentScene.scene_name}    
               </div>
-              <div>
-                <label>
-                  <strong>Description:</strong>
-                </label>{" "}
-                {currentScene.description}
-              </div>
-              <div>
-                <label>
+              <div className="details-divs">
+                <label className="list-item">
                   <strong>Category:</strong>  
                 </label>{" "}            
                 {currentScene.category}    
               </div>
-              <div>
-                <label>
+              <div className="details-divs">
+                <label className="list-item">
                   <strong>Tag:</strong>
                 </label>{" "}
                 {currentScene.tag}
               </div>
-              <div>
-                <label>
+              <div className="details-divs">
+                <label className="list-item">
                   <strong>Dataset:</strong>  
                 </label>{" "}            
                 {currentScene.dataset}    
               </div>
-
-              <Link
-                to={"/" + currentScene._id}
-                className="btn btn-sm btn-warning"
-                style={{marginRight: 10}}
-              >
-                Edit
-              </Link>
-              <Link
-                // need to eventually make it specialize in a particular scene
-                to="/editor"
-                className="btn btn-sm btn-info"
-                target="_blank"
-              >
-                Scene Editor
-              </Link>
-              
+              <div className="details-divs">
+                <label className="list-item">
+                  <strong>Description:</strong>
+                </label>{" "}
+                {currentScene.description}
+              </div>
+              <div className="mt-3">
+                <Link
+                  to={"/" + currentScene._id}
+                  className="btn btn-sm btn-warning list-button"
+                >
+                  Edit
+                </Link>
+                <Link
+                  // need to eventually make it specialize in a particular scene
+                  to="/toolkit"
+                  className="btn btn-sm btn-info"
+                  target="_blank"
+                >
+                  Scene Toolkit
+                </Link>
+              </div>
             </div>
           ) : (
             <div>
               <br />
-              <p>Please click on a Scene...</p>
+              <p>Click on a Scene...</p>
             </div>
           )}
         </div>

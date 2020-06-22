@@ -6,7 +6,7 @@ import "./App.css";
 import AddScene from "./components/add-scene.component";
 import Scene from "./components/scene.component";
 import ScenesList from "./components/scene-list.component";
-import SceneEditor from "./components/scene-editor.component";
+import SceneToolkit from "./components/scene-toolkit.component";
 // import axios from 'axios';
 
 class App extends Component {
@@ -20,13 +20,13 @@ class App extends Component {
             </a>
             <div className="navbar-nav mr-auto">
               <li className="nav-item">
-                <Link to={"/"} className="nav-link">
-                  Scenes
+                <Link to={"/add"} className="nav-link">
+                  Add
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to={"/add"} className="nav-link">
-                  Add
+                <Link to={"/toolkit"} className="nav-link">
+                  Toolkit
                 </Link>
               </li>
             </div>
@@ -36,7 +36,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={ScenesList} />
               <Route exact path="/add" component={AddScene} />
-              <Route exact path="/editor" component={SceneEditor} />  {/*order is important!*/}
+              <Route exact path="/toolkit" component={SceneToolkit} />  {/*order is important!*/}
               <Route path="/:_id" component={Scene} />
             </Switch>
           </div>
