@@ -25,7 +25,7 @@ class App extends Component {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to={"/toolkit"} className="nav-link">
+                <Link to={"/toolkit/"} className="nav-link"> {/*doesn't work currently */}
                   Toolkit
                 </Link>
               </li>

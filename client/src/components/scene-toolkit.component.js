@@ -98,7 +98,7 @@ export default class SceneToolkit extends Component{
                     scrolling: "yes"
                 }}
                 handleReceiveMessage={(data) => this.onReceiveMessage(data)}
-
+                postMessageData = {this.state.currentScene.json}
                 handleReady={() => 
                     console.log("ready")
                 }

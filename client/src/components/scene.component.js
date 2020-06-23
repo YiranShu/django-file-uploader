@@ -218,7 +218,7 @@ export default class Scene extends Component {
               </button>
 
               <Link
-                  to="/toolkit"
+                  to={"/toolkit/" + currentScene._id}
                   className="btn btn-info"
                   target="_blank"
                 >
