@@ -7,7 +7,7 @@ import datetime
 # gridfs_storage = GridFSStorage()
 
 from mongoengine import connect
-connect('test3')
+connect('test4')
 
 
 class Scene(mongoengine.Document):
@@ -22,6 +22,7 @@ class Scene(mongoengine.Document):
     category = mongoengine.StringField()
     tag = mongoengine.StringField()
     dataset = mongoengine.StringField()
+    json = mongoengine.StringField()
 
 
 

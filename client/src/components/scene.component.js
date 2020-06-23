@@ -28,6 +28,7 @@ export default class Scene extends Component {
         category: "",
         tag: "",
         dataset: "",
+        json: ""
       },
       message: ""
     };

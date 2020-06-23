@@ -22,6 +22,7 @@ export default class AddScene extends Component {
       category: "",
       tag: "",
       dataset: "",
+      json: "",
       submitted: false
     };
   }
@@ -40,7 +41,8 @@ export default class AddScene extends Component {
       description: this.state.description,
       category: this.state.category,
       tag: this.state.tag,
-      dataset: this.state.dataset
+      dataset: this.state.dataset,
+      json: this.state.json
     };
 
     SceneDataService.create(data)
@@ -53,6 +55,7 @@ export default class AddScene extends Component {
           category: response.data.category,
           tag: response.data.tag,
           dataset: response.data.dataset,
+          json: response.data.json,
 
           submitted: true
         });
@@ -72,6 +75,7 @@ export default class AddScene extends Component {
         category: "",
         tag: "",
         dataset: "",
+        json: "",
         submitted: false
     });
     window.location.reload(false)
