@@ -42,7 +42,7 @@ export default class AddScene extends Component {
       category: this.state.category,
       tag: this.state.tag,
       dataset: this.state.dataset,
-      json: this.state.json
+      json: 'test'
     };
 
     SceneDataService.create(data)

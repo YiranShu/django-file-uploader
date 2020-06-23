@@ -25,22 +25,21 @@ export default class SceneToolkit extends Component{
             dataset: "",
             json: ""
           },
-          message: ""
         };
     }
-    getScene(file_name) {
-        console.log("scene.component is mounted")
-        SceneDataService.get(file_name)
+
+    getScene(_id) {
+        SceneDataService.get(_id)
           .then(response => {
             this.setState({
                 currentScene: response.data
             });
-            console.log(response.data);
           })
           .catch(e => {
             console.log(e);
           });
     }
+
     updateScene() {
         SceneDataService.update(
           this.state.currentScene._id,
@@ -48,15 +47,26 @@ export default class SceneToolkit extends Component{
         )
           .then(response => {
             console.log(response.data);
-            this.setState({
-              message: "Your scene was successfully updated!"
-            });
           })
           .catch(e => {
             console.log(e);
           });
     }
-    
+
+    onChangeJson(data) {      
+      this.setState(prevState => ({
+          currentScene: {
+          ...prevState.currentScene,
+          json: data
+        }
+      }));
+    }
+
+    onReceiveMessage(data) {
+      this.onChangeJson(data.data)
+      this.updateScene()
+      console.log("received! :" + data.data)
+    }
       
     componentDidMount() {
         this.getScene(this.props.match.params._id);
@@ -79,21 +89,13 @@ export default class SceneToolkit extends Component{
                     allow: "fullscreen",
                     scrolling: "yes"
                 }}
-                handleReceiveMessage={(data) => 
-                    console.log("received! :"+data.data)
-                    
-                    // console.log("received! :"+data)
-                }
+                handleReceiveMessage={(data) => this.onReceiveMessage}
+
                 handleReady={() => 
                     console.log("ready")
                 }
-                
                 />
-            
         </div>
-        
-        );
-        
-    }
-    
+        ); 
+    } 
 }
