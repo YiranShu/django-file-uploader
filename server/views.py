@@ -67,7 +67,9 @@ def scenes_list(request):
     elif request.method == 'POST':
         scene_data = JSONParser().parse(request)
         serializer = SceneSerializer(data=scene_data)
+        print("****")
         if serializer.is_valid():
+            print("****!!!")
             serializer.save()
             return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
 

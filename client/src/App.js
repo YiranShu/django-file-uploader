@@ -36,7 +36,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={ScenesList} />
               <Route exact path="/add" component={AddScene} />
-              <Route exact path="/toolkit" component={SceneToolkit} />  {/*order is important!*/}
+              <Route path="/toolkit/:_id" component={SceneToolkit} />  {/*order is important!*/}
               <Route path="/:_id" component={Scene} />
             </Switch>
           </div>

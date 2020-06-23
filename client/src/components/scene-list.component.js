@@ -189,7 +189,7 @@ export default class ScenesList extends Component {
                 </Link>
                 <Link
                   // need to eventually make it specialize in a particular scene
-                  to="/toolkit"
+                  to={"/toolkit/" + currentScene._id}
                   className="btn btn-sm btn-info"
                   target="_blank"
                 >

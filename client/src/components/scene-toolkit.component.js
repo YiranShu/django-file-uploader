@@ -29,13 +29,16 @@ export default class SceneToolkit extends Component{
     }
 
     getScene(_id) {
+        console.log("id: "+_id)
         SceneDataService.get(_id)
           .then(response => {
+            console.log(response.data);
             this.setState({
                 currentScene: response.data
             });
           })
           .catch(e => {
+            console.log("fail to getScene!");
             console.log(e);
           });
     }
@@ -46,9 +49,11 @@ export default class SceneToolkit extends Component{
           this.state.currentScene
         )
           .then(response => {
+            console.log("update successfully!")
             console.log(response.data);
           })
           .catch(e => {
+            console.log("fail to update!")
             console.log(e);
           });
     }
@@ -63,12 +68,15 @@ export default class SceneToolkit extends Component{
     }
 
     onReceiveMessage(data) {
-      this.onChangeJson(data.data)
-      this.updateScene()
-      console.log("received! :" + data.data)
+      console.log("received! :" + data.data);
+      this.onChangeJson(data.data);
+      console.log("ChangeJson Successfully!");
+      this.updateScene();
+      
     }
       
     componentDidMount() {
+        console.log("scene-toolkit.component is mounted")
         this.getScene(this.props.match.params._id);
     }
     
@@ -89,7 +97,7 @@ export default class SceneToolkit extends Component{
                     allow: "fullscreen",
                     scrolling: "yes"
                 }}
-                handleReceiveMessage={(data) => this.onReceiveMessage}
+                handleReceiveMessage={(data) => this.onReceiveMessage(data)}
 
                 handleReady={() => 
                     console.log("ready")
