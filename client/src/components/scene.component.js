@@ -16,7 +16,6 @@ export default class Scene extends Component {
     this.onChangeTag = this.onChangeTag.bind(this);
     this.onChangeDataset = this.onChangeDataset.bind(this);
     this.getScene = this.getScene.bind(this);
-    // this.updatePublished = this.updatePublished.bind(this);
     this.updateScene = this.updateScene.bind(this);
     this.deleteScene = this.deleteScene.bind(this);
 
@@ -93,9 +92,9 @@ export default class Scene extends Component {
     }));
   }
 
-  getScene(file_name) {
+  getScene(_id) {
     console.log("scene.component is mounted")
-    SceneDataService.get(file_name)
+    SceneDataService.get(_id)
       .then(response => {
         this.setState({
             currentScene: response.data
@@ -127,7 +126,6 @@ export default class Scene extends Component {
   deleteScene() {    
     SceneDataService.delete(this.state.currentScene._id)
       .then(response => {
-        console.log('hi')
         console.log(response.data);
         this.props.history.push('/')
       })
