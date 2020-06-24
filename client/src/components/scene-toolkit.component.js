@@ -91,7 +91,7 @@ export default class SceneToolkit extends Component{
             />  */}
             <IComCom
                 attributes={{
-                    src: "http://localhost:8010//scene-viewer.html",
+                    src: "http://localhost:8010//scene-viewer.html?extra&sceneUrl=localhost:8080/scenes/"+this.props.match.params._id+"/json",
                     width: "100%",
                     height: "715",
                     allow: "fullscreen",

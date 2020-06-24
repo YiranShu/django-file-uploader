@@ -112,3 +112,15 @@ def scene_filter(request, scene_name):
     if request.method == 'GET':
         serializer = SceneSerializer(scene)
         return JsonResponse(serializer.data)
+
+@api_view(['GET'])
+def scene_json(request, _id):
+    try:
+        scene = models.Scene.objects.get(_id=_id)
+    except models.Scene.DoesNotExist:
+        return JsonResponse({'message': 'The scene does not exist'}, status=status.HTTP_404_NOT_FOUND)
+    if request.method == 'GET':
+        serializer = SceneSerializer(scene)
+        print(serializer.data['json'])
+        return JsonResponse(serializer.data['json'], safe=False)
+                    
